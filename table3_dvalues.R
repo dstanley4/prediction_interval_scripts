@@ -27,7 +27,7 @@ d_sim <- function(x){
      rep.n2 <- x[3]
      print(sprintf("pop.d=%1.2f, n1=%d, n2=%d, rep.n1=%d, rep.n2=%d",d,n1,n2,rep.n1,rep.n2))
      demo_ouput <- predictionInterval::pi.d.demo(n1=n1,n2=n2,rep.n1=rep.n1,rep.n2=rep.n2,number.trials = K,pop.d = d,bias.correction = FALSE)
-     ri_capture_percent <- round(demo_ouput$percent_in_ri,1)
+     pi_capture_percent <- round(demo_ouput$percent_in_pi,1)
      ci_capture_percent <- round(demo_ouput$percent_in_ci,1)
      rm(demo_ouput)
 
@@ -38,7 +38,7 @@ d_sim <- function(x){
      results$rep.n1 <- rep.n1
      results$rep.n2 <- rep.n2
      results$ci_capture_percent <- ci_capture_percent
-     results$ri_capture_percent <- ri_capture_percent
+     results$ri_capture_percent <- pi_capture_percent
      return(results)
 }
 
@@ -51,7 +51,7 @@ d_sim_unbiased <- function(x){
      rep.n2 <- x[3]
      print(sprintf("pop.d=%1.2f, n1=%d, n2=%d, rep.n1=%d, rep.n2=%d",d,n1,n2,rep.n1,rep.n2))
      demo_ouput <- predictionInterval::pi.d.demo(n1=n1,n2=n2,rep.n1=rep.n1,rep.n2=rep.n2,number.trials = K,pop.d = d,bias.correction = TRUE)
-     ri_capture_percent <- round(demo_ouput$percent_in_ri,1)
+     pi_capture_percent <- round(demo_ouput$percent_in_pi,1)
      ci_capture_percent <- round(demo_ouput$percent_in_ci,1)
      rm(demo_ouput)
 
@@ -62,7 +62,7 @@ d_sim_unbiased <- function(x){
      results$rep.n1 <- rep.n1
      results$rep.n2 <- rep.n2
      results$ci_capture_percent <- ci_capture_percent
-     results$ri_capture_percent <- ri_capture_percent
+     results$ri_capture_percent <- pi_capture_percent
      return(results)
 }
 
