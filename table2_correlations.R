@@ -41,7 +41,7 @@ for (i in 1:number_cors) {
           print(sprintf("rho=%1.2f, n=%d, rep.n=%d",rho,n,rep.n))
           demo_ouput <- pi.r.demo(n=n,rep.n=rep.n,number.trials = K,rho=rho)
           print(demo_ouput)
-          ri_capture_percent <- round(demo_ouput$percent_in_ri,1)
+          pi_capture_percent <- round(demo_ouput$percent_in_pi,1)
           ci_capture_percent <- round(demo_ouput$percent_in_ci,1)
           rm(demo_ouput)
 
@@ -49,7 +49,7 @@ for (i in 1:number_cors) {
           results$n[count] <- n
           results$rep.n[count] <- rep.n
           results$ci_capture_percent[count] <- ci_capture_percent
-          results$ri_capture_percent[count] <- ri_capture_percent
+          results$ri_capture_percent[count] <- pi_capture_percent
      }
 }
 print(results)
