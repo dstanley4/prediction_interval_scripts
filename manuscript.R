@@ -148,7 +148,7 @@ d.demo <- pi.d.demo(pop.d=.80,n1=50,n2=50,rep.n1 =50,rep.n2=50,number.trials=500
 print(d.demo)
 
 
-#Simulation for d-unbiased (i.e., with correlation)
+#Simulation for d-unbiased (i.e., with correction)
 library(predictionInterval)
 set.seed(11)
 d.demo <- pi.d.demo(pop.d=.80,n1=50,n2=50,rep.n1 =50,rep.n2=50,number.trials=50000,bias.correction = TRUE)
